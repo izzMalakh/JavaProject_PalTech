@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    <%@ page isErrorPage="true" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,6 +47,7 @@
                 <a href="#aboutus" class="nav-item nav-link">About Us</a>
                 <a href="#" class="nav-item nav-link">Find Worker</a>
                                 <a href="#" class="nav-item nav-link">Find Job</a>
+                <c:if test="${thisuser  == null}">
                 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">New Account</a>
@@ -60,8 +65,17 @@
                         <a href="/login/worker" class="dropdown-item">Worker</a>
                      
                     </div>
-                    
+                    </c:if>
                 </div>
+<c:if test="${thisuser  != null}">
+		<form id="logoutForm" class="nav-item nav-link" method="POST" action="/logout">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <input type="submit" value="Logout!" />
+       
+    </form>
+     </c:if>                
+                
+
           
             </div>
         </div>
@@ -76,6 +90,11 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-lg-10">
+                                <c:if test="${thisuser  != null}">
+                                
+                                Welcome ${thisuser.firstName }                             
+                                </c:if>
+                               
                                     <h5 class="text-light text-uppercase mb-3 animated slideInDown">Welcome to PalTech</h5>
                                     <h1 class="display-2 text-light mb-3 animated slideInDown">Palestinian workers community</h1>
                                     <a href="" class="btn btn-primary py-3 px-5">Tips to Get More Customers!</a>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,22 +37,31 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('/img/quds.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="/" method="post">
+			
+			   <c:if test="${logoutMessage != null}">
+        <c:out value="${logoutMessage}"></c:out>
+    </c:if>
+
+    <c:if test="${errorMessage != null}">
+        <c:out value="${errorMessage}"></c:out>
+    </c:if>
+				<form class="login100-form validate-form" action="/login/user" method="post">
 					
 					<span class="login100-form-title p-b-34 p-t-27">
 						Log in <span style="font-size:0.7rem; color:black;">as user</span>
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name="username" placeholder="Email">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">

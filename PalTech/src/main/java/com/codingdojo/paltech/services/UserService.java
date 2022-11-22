@@ -1,5 +1,7 @@
 package com.codingdojo.paltech.services;
 
+import java.util.Optional;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,14 @@ public class UserService {
         this.roleRepository = roleRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
-    
+    public User findById(Long id) {
+		Optional<User> optionalUser = userRepository.findById(id);
+		if(optionalUser.isPresent()) {
+			return optionalUser.get();
+		}else {
+			return null;
+		}
+	}
     
     // 1
     public void saveWithUserRole(User user) {
