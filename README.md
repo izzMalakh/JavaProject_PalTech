@@ -2,7 +2,7 @@
   <h1> PalTech </h1>
 </div>
 
-###Idea:
+### Idea:
 The main idea of this website came from the need to find a better way to reach the technicians that we need to do some jobs here and there, its like making a place where you can find all the available painters to paint your doors and all the builders to fix your wall with all thier required information.
 
 ### Site Overview:
