@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,31 +39,35 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('/img/quds1.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+			<form:form method="POST" action="/reg/worker" modelAttribute="worker" class="login100-form validate-form">
+			
 					
 					<span class="login100-form-title p-b-34 p-t-27">
 						Register
 					</span>
 					<div style="display:flex;">
 					<div class="wrap-input100 validate-input" >
-						<input class="input100" type="text" name="firstName" placeholder="First Name">
+						<form:input class="input100" type="text" path="firstName" placeholder="First Name"/>
+						<form:errors class="text-danger" path="firstName" />
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 					
 					<div class="wrap-input100 validate-input" >
-						<input class="input100" type="text" name="lastName" placeholder="Last Name">
+						<form:input class="input100" type="text" path="lastName" placeholder="Last Name" />
+						<form:errors class="text-danger" path="lastName" />
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 					</div>
 					<div style="display:flex;">
 					<div class="wrap-input100 validate-input" >
-						<input class="input100" type="text" name="phone" placeholder="Phone Number">
+						<form:input class="input100" type="text" path="mobile" placeholder="Phone Number"/>
+						<form:errors class="text-danger" path="mobile" />
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 					
 					<div class="wrap-input100 validate-input" >
 <div >
-                        <select class="input100" style="border:None;">
+                        <form:select path="workerAddress" class="input100" style="border:None;" >
                               <option value="" disabled selected hidden>Location</option>
                         
                             <option value="Ramallah" style="color:black;">Ramallah</option>
@@ -68,43 +75,50 @@
                             <option value="Betlahim" style="color:black;">Betlahim</option>
                             <option value="Tulkarm" style="color:black;">Tulkarm</option>
                             <option value="Hebron" style="color:black;">Hebron</option>
-                        </select>
+                       </form:select>
                       
-                    </div>						
+                    </div>
+                    <form:errors class="text-danger" path="workerAddress" />		
+                    				
 					</div>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="email" placeholder="Email">
+					<div class="wrap-input100 validate-input" data-validate = "Enter email">
+						<form:input class="input100" type="text" path="email" placeholder="Email"/>
+						<form:errors class="text-danger" path="email" />
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<form:input class="input100" type="password" path="password" placeholder="Password"/>
+						<form:errors class="text-danger" path="password" />
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="confirm" placeholder="Confirm Password">
+						<form:input class="input100" type="password" path="passwordConfirmation" placeholder="Confirm Password"/>
+						<form:errors class="text-danger" path="passwordConfirmation" />
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
+	
 						<div class="wrap-input100 validate-input" >
 <div >
-                        <select class="input100" style="border:None;">
+                        <form:select class="input100" style="border:None;" path="profession">
                               <option value="" disabled selected hidden>Position</option>
                         
                             <option value="Electricion" style="color:black;">Electricion</option>
                             <option value="Plumber" style="color:black;">Plumber</option>
                             <option value="Builder" style="color:black;">Builder</option>
                             <option value="General" style="color:black;">General</option>
-                        </select>
+                        </form:select>
                       
-                    </div>						
+                    </div>	
+                    <form:errors class="text-danger" path="profession" />					
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="date" name="birthday" placeholder="birthday">
+						<form:input class="input100" type="date" path="birthDate" placeholder="birthday"/>
+							<form:errors class="text-danger" path="birthDate" />
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -115,7 +129,7 @@
 						</button>
 					</div>
 r
-				</form>
+				</form:form>
 			</div>
 			
 		</div>

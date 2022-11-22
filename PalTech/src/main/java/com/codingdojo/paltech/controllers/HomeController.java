@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.codingdojo.paltech.models.User;
+import com.codingdojo.paltech.models.Worker;
 import com.codingdojo.paltech.services.UserService;
+import com.codingdojo.paltech.services.WorkerService;
 import com.codingdojo.paltech.validator.UserValidator;
 @Controller
 public class HomeController {
@@ -28,6 +30,9 @@ public class HomeController {
 
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	WorkerService workerService;
 	
 	@Autowired
 	
@@ -98,6 +103,24 @@ public class HomeController {
     	
         
     }
+    
+    @RequestMapping("/reg/worker")
+    public String registerWorkerForm(@ModelAttribute("worker") Worker worker) {
+        return "regWorkerPage.jsp";
+    }
+    
+    @PostMapping("/reg/worker")
+    public String registrationWorker(@Valid @ModelAttribute("worker") Worker worker, BindingResult result, Model model) {
+        // NEW
+    	if(result.hasErrors()) {
+			return "regWorkerPage.jsp";
+		}
+        
+        workerService.createWorker(worker);
+    	
+        return "redirect:/";
+    }
+    
  
 
 }

@@ -17,8 +17,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -44,29 +46,29 @@ public class Worker {
 	@Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters")
 	private String password;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotEmpty(message = "Please enter your birthdate")
+	 @DateTimeFormat(pattern="yyyy-MM-dd")
+	@NotNull(message="Please enter your birthdate")
 	private Date birthDate;
 
-	@NotEmpty
-	@NotEmpty(message = "Experience years can't be blank")
-	@Size(min = 0, max = 100, message = "experince years must be from 0-100")
+	
+//	@NotNull(message = "Experience years can't be blank")
+//	@Size(min = 0, max = 100, message = "experince years must be from 0-100")
 	private Integer expYears;
 
-	@NotEmpty(message = "Description can't be blank")
-	@Size(min = 0, max = 100, message = "Description must be 0-250 characters")
+//	@NotEmpty(message = "Description can't be blank")
+//	@Size(min = 0, max = 100, message = "Description must be 0-250 characters")
 	private String description;
 
-	@NotEmpty(message = "Experience years can't be blank")
-	@Size(min = 10, max = 10, message = "Please enter a valid mobile number ")
+//	@NotNull(message = "Mobile number can't be blank")
+//	@Size(min = 9, max = 10, message = "Please enter a valid mobile number ")
 	private Long mobile;
 
 	@NotEmpty(message = "Email is required!")
 	@Email(message = "Please enter a valid email!")
 	private String email;
 
-	@Nullable
-	@NotEmpty(message = "Status is required!")
+//	@Nullable
+//	@NotEmpty(message = "Status is required!")
 	private Boolean status;
 
 	@Nullable
@@ -85,13 +87,31 @@ public class Worker {
 	)
 	private List<User> users;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "workerAddress_id")
-	private WorkerAddress workerAddress;
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "workerAddress_id")
+	private String workerAddress;
+	
+    @Transient
+    @NotEmpty(message="Confirm Password is required!")
+    @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
+    private String passwordConfirmation;
+    
+    private String profession;
 
 	public Worker() {
 	
 	}
+
+	
+	public String getPasswordConfirmation() {
+		return passwordConfirmation;
+	}
+
+
+	public void setPasswordConfirmation(String passwordConfirmation) {
+		this.passwordConfirmation = passwordConfirmation;
+	}
+
 
 	public Long getId() {
 		return id;
@@ -149,7 +169,7 @@ public class Worker {
 		return users;
 	}
 
-	public WorkerAddress getWorkerAddress() {
+	public String getWorkerAddress() {
 		return workerAddress;
 	}
 
@@ -209,7 +229,7 @@ public class Worker {
 		this.users = users;
 	}
 
-	public void setWorkerAddress(WorkerAddress workerAddress) {
+	public void setWorkerAddress(String workerAddress) {
 		this.workerAddress = workerAddress;
 	}
 	
@@ -221,6 +241,16 @@ public class Worker {
 	@PreUpdate
 	protected void onUpdate() {
 		this.updatedAt = new Date();
+	}
+
+
+	public String getProfession() {
+		return profession;
+	}
+
+
+	public void setProfession(String profession) {
+		this.profession = profession;
 	}
 	
 
