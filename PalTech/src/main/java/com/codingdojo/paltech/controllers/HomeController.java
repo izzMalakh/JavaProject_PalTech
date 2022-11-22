@@ -67,6 +67,11 @@ public class HomeController {
         return "redirect:/";
     }
     
+    @RequestMapping("/admin")
+    public String h() {
+    	return "userhome.jsp";
+    }
+    
     
     @RequestMapping("/login/user")
     public String login(@RequestParam(value="error", required=false) String error, @RequestParam(value="logout", required=false) String logout, Model model) {

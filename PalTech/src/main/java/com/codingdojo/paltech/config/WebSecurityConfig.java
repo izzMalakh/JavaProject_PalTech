@@ -32,7 +32,7 @@ public class WebSecurityConfig {
 //	            .antMatchers("/css/*","/img/*", "/js/*", "/vendor/*").permitAll()
 	            .antMatchers("/admin/**").access("hasRole('ADMIN')")    // NEW
 	            .antMatchers("/","/public/**", "/resources/**","/resources/img/**").permitAll()
-	            .anyRequest().permitAll()
+//	            .anyRequest().permitAll()
 	            
 	            .and()
 	        .formLogin()
