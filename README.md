@@ -27,3 +27,9 @@ user (seeker).
 - Spring Tool Suit 4.16.1
 - MySQL Workbench 8.0 CE
 - Bootstrap 5.0
+
+### Members:
+> Mutasem Siam
+>> mutasemSiam4@gmail.com
+> Izz Aldeen Malakh
+>> izz@gmail.com
