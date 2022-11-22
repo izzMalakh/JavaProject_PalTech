@@ -34,3 +34,9 @@ user (seeker).
 
 > Izz Aldeen Malakh
 >> izz@gmail.com
+
+> Laith Barq
+>> laith@gmail.com
+
+> Osama Tbaileh
+>> osama.tb02@gmail.com
