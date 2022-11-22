@@ -12,5 +12,5 @@ This will be done by building a website that allows technicians to register and 
 may help the other side in their selection.
 
 ### Functional Requirements:
-*Login and registration. A user can register and login either as a technician or as a normal
+* Login and registration. A user can register and login either as a technician or as a normal
 user (seeker).
