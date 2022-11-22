@@ -1,5 +1,9 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isErrorPage="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,19 +39,24 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('/img/quds.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				
+				
+				<form:form action="/login/worker" method="post" modelAttribute="newLogin"
+				class="login100-form validate-form">
 					
 					<span class="login100-form-title p-b-34 p-t-27">
 						Log in <span style="font-size:0.7rem; color:black;">as worker</span>
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<form:input class="input100" type="text" path="email" placeholder="Email"/>
+						<form:errors class="text-danger" path="email" />
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<form:input class="input100" type="password" path="password" placeholder="Password"/>
+						<form:errors class="text-danger" path="password" />
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -58,7 +67,7 @@
 						</button>
 					</div>
 r
-				</form>
+				</form:form>
 			</div>
 		</div>
 	</div>

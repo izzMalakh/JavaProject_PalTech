@@ -1,12 +1,18 @@
 package com.codingdojo.paltech.services;
 
+import java.util.List;
 import java.util.Optional;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
+import com.codingdojo.paltech.models.LoginWorker;
 import com.codingdojo.paltech.models.Worker;
 import com.codingdojo.paltech.repositories.WorkerRepository;
+
+
 
 @Service
 public class WorkerService {
@@ -15,6 +21,7 @@ public class WorkerService {
 	
 	public Worker createWorker(Worker worker) {
 		return workerRepo.save(worker);
+	}
 		
 
 		public Worker findWorkerByEmail(String email) {
@@ -37,9 +44,9 @@ public class WorkerService {
 		     return workerRepo.findAll();
 		 }
 		 
-		    public User register(User newUser, BindingResult result) {
+		    public Worker register(Worker newUser, BindingResult result) {
 		        
-		    	Optional<User> potentialUser = userRepo.findByEmail(newUser.getEmail());
+		    	Optional<Worker> potentialUser = workerRepo.findByEmail(newUser.getEmail());
 		    	
 		    	// Reject if email is taken (present in database)
 		    	if(potentialUser.isPresent()) {
@@ -47,7 +54,7 @@ public class WorkerService {
 		    	}
 		    	
 		        // Reject if password doesn't match confirmation
-		    	if(!newUser.getPassword().equals(newUser.getConfirm())) {
+		    	if(!newUser.getPassword().equals(newUser.getPasswordConfirmation())) {
 		    		result.rejectValue("confirm", "Matches", "The Confirm Password must match Password!");
 		    	}
 		    	
@@ -78,13 +85,13 @@ public class WorkerService {
 		        // Hash and set password, save user to database
 		    	String hashed = BCrypt.hashpw(newUser.getPassword(), BCrypt.gensalt());
 		    	newUser.setPassword(hashed);
-		    	return userRepo.save(newUser);
+		    	return workerRepo.save(newUser);
 		    	
 		    }
 		    
-		    public User login(LoginUser newLogin, BindingResult result) {
+		    public Worker login(LoginWorker newLogin, BindingResult result) {
 		    	
-		    	Optional<User> potentialUser = userRepo.findByEmail(newLogin.getEmail());
+		    	Optional<Worker> potentialUser = workerRepo.findByEmail(newLogin.getEmail());
 		        
 		    	// Reject if email pattern is incorrect
 		    	String toCheckEmailPattern = newLogin.getEmail();
@@ -101,7 +108,7 @@ public class WorkerService {
 		    	}
 		    	
 		    	// User exists, retrieve user from DB
-		    	User user = potentialUser.get();
+		    	Worker user = potentialUser.get();
 		        
 		        // Reject if BCrypt password match fails
 		    	if(!BCrypt.checkpw(newLogin.getPassword(), user.getPassword())) {
@@ -117,9 +124,7 @@ public class WorkerService {
 		        return user;
 		    }
 		    
-		    public User updateUser(User user) {
-		    	return userRepo.save(user);
-		    }
+		 
 	}
 
-}
+
