@@ -1,5 +1,5 @@
 <div align="center">
-# PalTech
+  <h1> PalTech </h1>
 </div>
 
 
