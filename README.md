@@ -10,3 +10,7 @@ The main goal of this project is to make connection between technicians (e.g. pa
 <br>
 This will be done by building a website that allows technicians to register and upload their information including years of experience and other related information that
 may help the other side in their selection.
+
+### Functional Requirements:
+*Login and registration. A user can register and login either as a technician or as a normal
+user (seeker).
