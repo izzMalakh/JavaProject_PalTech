@@ -27,6 +27,7 @@ user (seeker).
 - Spring Tool Suit 4.16.1
 - MySQL Workbench 8.0 CE
 - Bootstrap 5.0
+- Gmail API
 
 ### Members:
 > Mutasem Siam
