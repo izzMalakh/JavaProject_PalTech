@@ -14,3 +14,10 @@ may help the other side in their selection.
 ### Functional Requirements:
 * Login and registration. A user can register and login either as a technician or as a normal
 user (seeker).
+* As a technician, user will have a profile page that includes all his information some of which will be already entered in the registration form while other information could be added later. User will be also able to edit his profile information.
+* As a seeker, user will be able to submit a request to contact a technician, review technicians after the completion of the task. A seeker will also has a profile and can edit his information.
+* A seeker could search for a technician by filtering or through a search box.
+* Users can also enter the website as guests. They will be able to search for technicians without having to register but with some limitations to other functionalities such as submitting requests and making reviews.
+
+ERD:
+![alt text](https://github.com/OsamaTbaileh/Java/blob/master/java%20project%20ERD%20pic/ERD.png?raw=true)
