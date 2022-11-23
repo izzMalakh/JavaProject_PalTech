@@ -19,8 +19,12 @@ user (seeker).
 * A seeker could search for a technician by filtering or through a search box.
 * Users can also enter the website as guests. They will be able to search for technicians without having to register but with some limitations to other functionalities such as submitting requests and making reviews.
 
+
+## Home Page:
+![alt text](https://github.com/OsamaTbaileh/Java/blob/master/java%20project%20readme%20pics/home.png?raw=true)
+
 ## ERD:
-![alt text](https://github.com/OsamaTbaileh/Java/blob/master/java%20project%20ERD%20pic/ERD.png?raw=true)
+![alt text](https://github.com/OsamaTbaileh/Java/blob/master/java%20project%20readme%20pics/ERD.png?raw=true)
 
 
 
