@@ -21,9 +21,9 @@ user (seeker).
 
 ## ERD:
 
-<div style="width:300px">
-![alt text](https://github.com/OsamaTbaileh/Java/tree/master/java%20project%20ERD%20pic?raw=true)
-</div>
+<div style="width:60px ; height:60px">
+![Employee data](https://github.com/OsamaTbaileh/Java/tree/master/java%20project%20ERD%20pic?raw=true "Employee Data title")
+<div>
 
 
 ## Technologies Used:
