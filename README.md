@@ -20,7 +20,7 @@ user (seeker).
 * Users can also enter the website as guests. They will be able to search for technicians without having to register but with some limitations to other functionalities such as submitting requests and making reviews.
 
 ## ERD:
-![alt text](https://github.com/OsamaTbaileh/Java/blob/master/java%20project%20ERD%20pic/ERD.png?raw=true =x250)
+![alt text](https://github.com/OsamaTbaileh/Java/blob/master/java%20project%20ERD%20pic/ERD.png =x250)
 
 ## Technologies Used:
 - Java 8.0
@@ -31,7 +31,7 @@ user (seeker).
 
 ## Members:
 > Mutasem Siam
->> mutasemsiam4@gmail.com
+>> mutasemSiam4@gmail.com
 
 > Izz Aldeen Malakh
 >> izz@gmail.com
