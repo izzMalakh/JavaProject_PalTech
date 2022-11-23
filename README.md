@@ -22,7 +22,7 @@ user (seeker).
 ## ERD:
 
 <div style="width:300px">
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/OsamaTbaileh/Java/tree/master/java%20project%20ERD%20pic?raw=true)
 </div>
 
 
