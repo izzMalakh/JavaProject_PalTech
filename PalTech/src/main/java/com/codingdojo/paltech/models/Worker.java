@@ -53,10 +53,13 @@ public class Worker {
 	
 //	@NotNull(message = "Experience years can't be blank")
 //	@Size(min = 0, max = 100, message = "experince years must be from 0-100")
+	 @Nullable
 	private Integer expYears;
 
 //	@NotEmpty(message = "Description can't be blank")
 //	@Size(min = 0, max = 100, message = "Description must be 0-250 characters")
+	@Nullable
+
 	private String description;
 
 //	@NotNull(message = "Mobile number can't be blank")
@@ -67,8 +70,7 @@ public class Worker {
 	@Email(message = "Please enter a valid email!")
 	private String email;
 
-//	@Nullable
-//	@NotEmpty(message = "Status is required!")
+	@Nullable
 	private Boolean status;
 
 	@Nullable
@@ -97,6 +99,9 @@ public class Worker {
     private String passwordConfirmation;
     
     private String profession;
+    
+    @Nullable
+    private String pic;
 
 	public Worker() {
 	
@@ -148,6 +153,17 @@ public class Worker {
 	public String getEmail() {
 		return email;
 	}
+
+	
+	public String getPic() {
+		return pic;
+	}
+
+
+	public void setPic(String pic) {
+		this.pic = pic;
+	}
+
 
 	public Boolean getStatus() {
 		return status;

@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -32,8 +34,9 @@ public class Review {
     @Size(min=3, max=255, message="Comment must be between 3 and 255 characters")
     private String comment;
     
-    @NotEmpty(message="Rating is required!")
-    @Size(min=0, max=5, message="Rating must be between 0 and 5")
+//    @NotEmpty(message="Rating is required!")
+    @Min(value=0,message="Rating must be between 0 and 5")
+    @Max(value=5,message="Rating must be between 0 and 5")
     private Integer rating;
     
     @Column(updatable=false)

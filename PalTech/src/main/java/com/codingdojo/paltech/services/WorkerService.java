@@ -22,6 +22,45 @@ public class WorkerService {
 	public Worker createWorker(Worker worker) {
 		return workerRepo.save(worker);
 	}
+//	public Worker updaterating(Worker worker,double rating) {
+//		 Optional<Worker> optWorker = workerRepo.findById(worker.getId());
+//	        if(optWorker.isPresent()) {
+//	            Worker thisWorker = optWorker.get();
+//	            System.out.println("izzwwwwwwwwwwwwwwww");
+//	            thisWorker.setRating(rating);
+//	   
+//	            System.out.println("izz");
+//
+//	            return null;
+//	        }else {
+//	            return null;
+//	        }
+//	}
+	public Worker editWorker(Worker worker) {
+        Optional<Worker> optWorker = workerRepo.findById(worker.getId());
+        if(optWorker.isPresent()) {
+            Worker thisWorker = optWorker.get();
+
+            thisWorker.setId(worker.getId());
+            thisWorker.setFirstName(worker.getFirstName());
+            thisWorker.setLastName(worker.getLastName());
+            thisWorker.setWorkerAddress(worker.getWorkerAddress());
+            
+            thisWorker.setBirthDate(worker.getBirthDate());
+            thisWorker.setRating(worker.getRating());
+            thisWorker.setEmail(worker.getEmail());
+            thisWorker.setMobile(worker.getMobile());
+            thisWorker.setProfession(worker.getProfession());
+            
+           
+
+
+            return workerRepo.save(thisWorker);
+        }else {
+            return null;
+        }
+
+    }
 		
 
 		public Worker findWorkerByEmail(String email) {

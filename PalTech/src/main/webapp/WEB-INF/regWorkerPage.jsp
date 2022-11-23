@@ -121,7 +121,11 @@
 							<form:errors class="text-danger" path="birthDate" />
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
-
+	<div class="wrap-input100 validate-input" data-validate = "Enter email">
+						<form:input class="input100" type="text" path="pic" placeholder="Image"/>
+						<form:errors class="text-danger" path="pic" />
+						<span class="focus-input100" data-placeholder=""></span>
+					</div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">

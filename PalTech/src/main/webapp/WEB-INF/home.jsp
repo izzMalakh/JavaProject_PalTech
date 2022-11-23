@@ -45,8 +45,14 @@
             <div class="navbar-nav ms-auto py-3 py-lg-0">
                 <a href="/" class="nav-item nav-link active">Home</a>
                 <a href="#aboutus" class="nav-item nav-link">About Us</a>
-                <a href="#" class="nav-item nav-link">Find Worker</a>
-                                <a href="#" class="nav-item nav-link">Find Job</a>
+               
+             <a href="/allworkers" class="nav-item nav-link">All Worker</a>
+                                
+                               
+                                <c:if test="${thisworker  != null}">
+                                <a href="/worker/${thisworker.id}" class="nav-item nav-link">Profile</a>
+                                </c:if>
+                              
                 <c:if test="${thisuser  == null}">
                 
                 <div class="nav-item dropdown">
@@ -90,6 +96,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-lg-10">
+                                  
                                 <c:if test="${thisuser  != null}">
                                 
                                 Welcome ${thisuser.firstName }                             
