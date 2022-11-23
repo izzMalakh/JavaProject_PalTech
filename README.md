@@ -20,7 +20,10 @@ user (seeker).
 * Users can also enter the website as guests. They will be able to search for technicians without having to register but with some limitations to other functionalities such as submitting requests and making reviews.
 
 ## ERD:
-<img src="(https://github.com/OsamaTbaileh/Java/blob/master/java%20project%20ERD%20pic/ERD.png" width="500" />
+
+<div style="width:300px">
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+</div>
 
 
 ## Technologies Used:
