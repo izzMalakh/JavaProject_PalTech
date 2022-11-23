@@ -40,11 +40,11 @@ user (seeker).
 > Mutasem Siam
 >> mutasemSiam4@gmail.com
 
-> Izz Aldeen Malakh
->> izz@gmail.com
+> Izzaldeen Jamal Malakh  
+>> izzaldeenjamal@gmail.com
 
 > Laith Barq
->> laith@gmail.com
+>> barqlaith99@gmail.com
 
 > Osama Tbaileh
 >> osama.tb02@gmail.com
