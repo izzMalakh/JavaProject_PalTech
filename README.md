@@ -35,6 +35,7 @@ user (seeker).
 - MySQL Workbench 8.0 CE
 - Bootstrap 5.0
 - Gmail API
+- Spring Security
 
 ## Members:
 > Mutasem Siam
